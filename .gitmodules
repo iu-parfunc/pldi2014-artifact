@@ -1,3 +1,9 @@
 [submodule "dpj_cilk_run"]
 	path = dpj_cilk_run
 	url = https://github.com/rrnewton/dpj_run.git
+[submodule "LVish_repo"]
+	path = LVish_repo
+	url = https://github.com/iu-parfunc/lvars.git
+[submodule "LVish-examples"]
+	path = LVish-examples
+	url = https://github.com/lkuper/lvar-examples.git
