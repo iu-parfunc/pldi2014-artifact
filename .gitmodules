@@ -1,0 +1,3 @@
+[submodule "dpj_cilk_run"]
+	path = dpj_cilk_run
+	url = https://github.com/rrnewton/dpj_run.git
