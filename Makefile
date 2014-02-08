@@ -5,7 +5,7 @@ LVISH_PKGS=LVish_repo/haskell/par-classes LVish_repo/haskell/lvish LVish_repo/ha
 
 PHYBIN=PhyBin/
 
-build: sandbox 
+build: sandbox submod
 	cabal install -j -f-fusion ${LVISH_PKGS} ${MONAD_PAR_PKGS} ${PHYBIN}
 
 
