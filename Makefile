@@ -6,10 +6,8 @@ LVISH_PKGS=LVish_repo/haskell/par-classes LVish_repo/haskell/lvish LVish_repo/ha
 PHYBIN=PhyBin/
 
 build: sandbox submod
-	cabal install -j -f-fusion hsbencher-1.5.1 ${LVISH_PKGS} ${MONAD_PAR_PKGS} ${PHYBIN} 
+	cabal install -j -f-fusion -f-hydra ./HSBencher ${LVISH_PKGS} ${MONAD_PAR_PKGS} ${PHYBIN} 
 
-temp:
-	cabal install -f-fusion -f-hydra ./HSBencher/   -v
 
 sandbox:
 	cabal sandbox init
