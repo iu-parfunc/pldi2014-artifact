@@ -7,3 +7,6 @@
 [submodule "LVish-examples"]
 	path = LVish-examples
 	url = https://github.com/lkuper/lvar-examples.git
+[submodule "PhyBin"]
+	path = PhyBin
+	url = https://github.com/rrnewton/PhyBin.git
