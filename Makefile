@@ -1,12 +1,12 @@
 
 MONAD_PAR_PKGS=monad-par/monad-par monad-par/monad-par-extras monad-par/abstract-par
 
-LVISH_PKGS=LVish_repo/haskell/par-classes LVish_repo/haskell/lvish LVish_repo/haskell/par-transformers LVish_repo/haskell/par-collections 
+LVISH_PKGS=LVish_repo/haskell/par-classes LVish_repo/haskell/lvish LVish_repo/haskell/par-transformers LVish_repo/haskell/par-collections LVish_repo/haskell/par-transformers/bench
 
 PHYBIN=PhyBin/
 
 build: sandbox 
-	cabal install -j ${LVISH_PKGS} ${MONAD_PAR_PKGS} ${PHYBIN}
+	cabal install -j -f-fusion ${LVISH_PKGS} ${MONAD_PAR_PKGS} ${PHYBIN}
 
 
 sandbox:
