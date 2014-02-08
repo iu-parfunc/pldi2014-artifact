@@ -8,6 +8,8 @@ PHYBIN=PhyBin/
 build: sandbox submod
 	cabal install -j -f-fusion hsbencher-1.5.1 ${LVISH_PKGS} ${MONAD_PAR_PKGS} ${PHYBIN} 
 
+temp:
+	cabal install -f-fusion -f-hydra ./HSBencher/   -v
 
 sandbox:
 	cabal sandbox init

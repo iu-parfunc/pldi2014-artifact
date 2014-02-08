@@ -17,3 +17,6 @@
 [submodule "monad-par"]
 	path = monad-par
 	url = git@github.com:simonmar/monad-par
+[submodule "HSBencher"]
+	path = HSBencher
+	url = git@github.com:rrnewton/HSBencher.git
