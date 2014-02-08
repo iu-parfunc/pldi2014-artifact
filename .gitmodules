@@ -1,12 +1,16 @@
 [submodule "dpj_cilk_run"]
 	path = dpj_cilk_run
-	url = https://github.com/rrnewton/dpj_run.git
+#	url = https://github.com/rrnewton/dpj_run.git
+	url = git@github.com:rrnewton/dpj_run.git
 [submodule "LVish_repo"]
 	path = LVish_repo
-	url = https://github.com/iu-parfunc/lvars.git
+#	url = https://github.com/iu-parfunc/lvars.git
+	url = git@github.com:iu-parfunc/lvars.git
 [submodule "LVish-examples"]
 	path = LVish-examples
-	url = https://github.com/lkuper/lvar-examples.git
+#	url = https://github.com/lkuper/lvar-examples.git
+	url = git@github.com:lkuper/lvar-examples.git
 [submodule "PhyBin"]
 	path = PhyBin
-	url = https://github.com/rrnewton/PhyBin.git
+#	url = https://github.com/rrnewton/PhyBin.git
+        url = git@github.com:rrnewton/PhyBin.git
