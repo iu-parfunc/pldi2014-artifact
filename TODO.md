@@ -5,7 +5,7 @@ Critical Path
  * [monad-par benchmarks, dev branch] mandel/primes -- blow away
    conditionals and commit to NEW_GENERIC, refactor to use 'irange'
    function for range construction
-      
+
  * switch phybin to new counter
  
  * Write readme, refer to examples and benchmarks
