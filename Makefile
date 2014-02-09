@@ -8,16 +8,17 @@ PHYBIN=PhyBin/
 build: sandbox submod rebuild
 
 rebuild:
-	cabal install -j -f-fusion -f-hydra ./HSBencher ${LVISH_PKGS} ${MONAD_PAR_PKGS} ${PHYBIN} 
+	cabal install --reinstall --force-reinstall -j -f-fusion -f-hydra ./HSBencher ${LVISH_PKGS} ${MONAD_PAR_PKGS} ${PHYBIN} 
 
 mergesort_bench:
 	cabal install LVish_repo/haskell/par-transformers/bench/mergesort/
 
-monadpar_bench:
-	cabal install -j -ftrace --disable-library-profiling --disable-documentation monad-par/examples/src/mandel/ monad-par/examples/src/sumeuler/ monad-par/examples/src/blackscholes/ monad-par/examples/src/parfib/
+monadpar_bench: submod
+	(cd monad-par/examples && make)
 
 sandbox:
 	cabal sandbox init
+	(cd monad-par/examples && cabal sandbox init --sandbox ../../.cabal-sandbox)
 
 clean: submod clean-sandbox 
 
