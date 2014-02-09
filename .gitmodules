@@ -16,7 +16,8 @@
         url = git@github.com:rrnewton/PhyBin.git
 [submodule "monad-par"]
 	path = monad-par
-	url = git@github.com:simonmar/monad-par
+#	url = git@github.com:simonmar/monad-par
+        url = git@github.com:samth/monad-par.git
 [submodule "HSBencher"]
 	path = HSBencher
 	url = git@github.com:rrnewton/HSBencher.git

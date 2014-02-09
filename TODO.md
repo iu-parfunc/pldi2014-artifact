@@ -9,7 +9,7 @@ Critical Path
       
  * switch phybin to new counter
  
- * Write readme, refer to examples and benchmarks
+ * Write README, refer to examples and benchmarks
  * Write website, link github artifact
  * Build VM, add to website
 
