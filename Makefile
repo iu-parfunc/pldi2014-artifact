@@ -104,7 +104,7 @@ mergesort_bench_large_c:
 
 sandbox:
 	cabal sandbox init
-	./link_sandboxes.sh
+	./link_sandboxes.sh $(SANDBOX)
 
 clean: submod clean-sandbox 
 
