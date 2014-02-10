@@ -11,6 +11,8 @@ SANDBOX=$(shell pwd)/.cabal-sandbox/
 
 BIN=$(SANDBOX)/bin/
 
+default: rebuild
+
 build: submod sandbox
 	cabal install -O2 -j vector vector-algorithms
 	$(MAKE) rebuild
@@ -112,3 +114,14 @@ submod:
 
 clean-sandbox:
 	cabal sandbox delete
+
+really-clean:
+	(cd monad-par && git clean -fxd)
+	(cd LVish-examples && git clean -fxd)
+	(cd LVish_repo && git clean -fxd)
+	(cd PhyBin && git clean -fxd)
+	(cd HSBencher && git clean -fxd)
+	(cd hashrf && git clean -fxd)
+	(cd dpj_cilk_run && git clean -fxd)
+	git clean -fxd
+	$(MAKE) clean-sandbox
