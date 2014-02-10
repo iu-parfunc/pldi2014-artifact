@@ -21,6 +21,9 @@ rebuild:
 examples:
 	cabal install LVish-examples/2.0
 
+# This takes a while.
+everything: build examples phybin_bench mergesort_bench transformer_bench
+
 #------------------------------------------------------------
 # Bench 1: Phybin
 
@@ -89,9 +92,6 @@ mergesort_bench_large_c:
 	$(C_MERGESORT_CMD) +RTS -N12 > mergesort/c_mergesort12.txt
 
 #------------------------------------------------------------
-
-monadpar_bench: submod
-	(cd monad-par/examples && make)
 
 sandbox:
 	cabal sandbox init
