@@ -39,9 +39,9 @@ phybin_bench:
 	$(PHYBIN_CMD) +RTS -N4 > ./PhyBin/phybin_out4.txt
 #	cat ./PhyBin/phybin_out?.txt | grep "Time to compute" > phybin_results.txt
 	cat ./PhyBin/phybin_out1.txt | grep "Time to compute" > phybin_results.txt
-	cat ./PhyBin/phybin_out2.txt | grep "Time to compute" > phybin_results.txt
-	cat ./PhyBin/phybin_out3.txt | grep "Time to compute" > phybin_results.txt
-	cat ./PhyBin/phybin_out4.txt | grep "Time to compute" > phybin_results.txt
+	cat ./PhyBin/phybin_out2.txt | grep "Time to compute" >> phybin_results.txt
+	cat ./PhyBin/phybin_out3.txt | grep "Time to compute" >> phybin_results.txt
+	cat ./PhyBin/phybin_out4.txt | grep "Time to compute" >> phybin_results.txt
 
 #------------------------------------------------------------
 # Bench 2: Transformer overheads
