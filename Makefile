@@ -39,6 +39,7 @@ phybin_bench:
 transformer_bench: 
 	(cd monad-par/examples; ./generate_cabal.sh)
 	(cd monad-par/examples; $(BIN)/run_benchmark_monadpar --lvish --lvish-state --lvish-cancel)
+	cp monad-par/examples/results_*.dat transformer_results.txt
 
 #------------------------------------------------------------
 # Bench 3: Mergesort
