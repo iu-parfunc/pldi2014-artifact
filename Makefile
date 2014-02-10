@@ -5,7 +5,7 @@ LVISH_PKGS=LVish_repo/haskell/par-classes LVish_repo/haskell/lvish LVish_repo/ha
 
 PHYBIN=PhyBin/
 
-CABAL_ARGS= --disable-documentation --disable-library-profiling --disable-executable-profiling -j
+CABAL_ARGS= --enable-documentation --disable-library-profiling --disable-executable-profiling -j
 
 SANDBOX=$(shell pwd)/.cabal-sandbox/
 
