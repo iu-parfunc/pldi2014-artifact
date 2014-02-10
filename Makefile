@@ -5,7 +5,9 @@ LVISH_PKGS=LVish_repo/haskell/par-classes LVish_repo/haskell/lvish LVish_repo/ha
 
 PHYBIN=PhyBin/
 
-build: sandbox submod rebuild
+build: sandbox submod 
+	cabal install -O2 -j vector-algorithms
+	$(MAKE) rebuild
 
 rebuild:
 	cabal install --reinstall --force-reinstall -j -f-fusion -f-hydra ./HSBencher ${LVISH_PKGS} ${MONAD_PAR_PKGS} ${PHYBIN} 
@@ -19,11 +21,11 @@ examples:
 PHYBIN_CMD=./.cabal-sandbox/bin/phybin-par -n150 --single --rfdist ./hashrf/30.hashrf-6.0.0-dist-seed-option/examples/150-taxa-1000-trees.tre +RTS -K100M -RTS
 
 phybin_bench:
-	$(PHYBIN_CMD) +RTS -N1 > ./Phybin/phybin_out1.txt
-	$(PHYBIN_CMD) +RTS -N2 > ./Phybin/phybin_out2.txt
-	$(PHYBIN_CMD) +RTS -N3 > ./Phybin/phybin_out3.txt
-	$(PHYBIN_CMD) +RTS -N4 > ./Phybin/phybin_out4.txt
-	cat ./Phybin/phybin_out?.txt | grep "Time to compute" > phybin_results.txt
+	$(PHYBIN_CMD) +RTS -N1 > ./PhyBin/phybin_out1.txt
+	$(PHYBIN_CMD) +RTS -N2 > ./PhyBin/phybin_out2.txt
+	$(PHYBIN_CMD) +RTS -N3 > ./PhyBin/phybin_out3.txt
+	$(PHYBIN_CMD) +RTS -N4 > ./PhyBin/phybin_out4.txt
+	cat ./PhyBin/phybin_out?.txt | grep "Time to compute" > phybin_results.txt
 
 #------------------------------------------------------------
 # Bench 2: Transformer overheads
