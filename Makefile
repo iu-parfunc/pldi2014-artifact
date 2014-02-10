@@ -60,6 +60,8 @@ MERGESORT_CMD=$(BIN)/test-mergesort-parST 25 8192 8192
 HS_MERGESORT_CMD=$(MERGESORT_CMD) VAMSort MPMerge
 C_MERGESORT_CMD=$(MERGESORT_CMD) CSort CMerge
 
+PKG=
+
 mergesort_setup:
 	mkdir -p mergesort/
 	cabal install LVish_repo/haskell/par-transformers/bench/
@@ -102,9 +104,7 @@ mergesort_bench_large_c:
 
 sandbox:
 	cabal sandbox init
-	(cd monad-par/examples && cabal sandbox init --sandbox $(SANDBOX))
-	(cd LVish_repo/haskell/par-transformers/bench/ && cabal sandbox init --sandbox $(SANDBOX))
-	(cd LVish_repo/haskell/par-transformers/bench/mergesort/ && cabal sandbox init --sandbox $(SANDBOX))
+	./link_sandboxes.sh $(SANDBOX)
 
 clean: submod clean-sandbox 
 
