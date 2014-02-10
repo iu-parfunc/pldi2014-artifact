@@ -8,4 +8,5 @@ RUN cd pldi2014-artifact && make sandbox
 RUN cd pldi2014-artifact && make build
 RUN cd pldi2014-artifact && make phybin_bench
 RUN cd pldi2014-artifact && make mergesort_bench
+ENV USER pldi
 RUN cd pldi2014-artifact && make transformer_bench
