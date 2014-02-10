@@ -11,7 +11,7 @@ SANDBOX=$(shell pwd)/.cabal-sandbox/
 
 BIN=$(SANDBOX)/bin/
 
-build: sandbox submod 
+build: submod sandbox
 	cabal install -O2 -j vector vector-algorithms
 	$(MAKE) rebuild
 
