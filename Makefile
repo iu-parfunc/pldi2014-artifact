@@ -1,5 +1,5 @@
 
-MONAD_PAR_PKGS=monad-par/monad-par monad-par/monad-par-extras monad-par/abstract-par
+MONAD_PAR_PKGS=monad-par/monad-par monad-par/monad-par-extras monad-par/abstract-par monad-par/examples/
 
 LVISH_PKGS=LVish_repo/haskell/par-classes LVish_repo/haskell/lvish LVish_repo/haskell/par-transformers LVish_repo/haskell/par-collections LVish_repo/haskell/par-transformers/bench
 
@@ -36,6 +36,9 @@ phybin_bench:
 #------------------------------------------------------------
 # Bench 2: Transformer overheads
 
+transformer_bench: 
+	(cd monad-par/examples; ./generate_cabal.sh)
+	(cd monad-par/examples; $(BIN)/run_benchmark_monadpar --lvish --lvish-state --lvish-cancel)
 
 #------------------------------------------------------------
 # Bench 3: Mergesort
