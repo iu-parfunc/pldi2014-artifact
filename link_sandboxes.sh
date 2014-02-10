@@ -15,6 +15,7 @@ function link() {
 (cd LVish_repo/haskell/par-transformers/bench/mergesort/ && link)
 
 (cd monad-par/examples && link)
+(cd dpj_cilk_run && link)
 
 BENCHES="Microbench cholesky kmeans matmult nbody partree primes quicksort schedulers sorting sumeuler blackscholes coins mandel minimax parfib queens randomGen simple stream"
 
