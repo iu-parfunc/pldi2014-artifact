@@ -12,6 +12,10 @@ Critical Path
  * Write README, refer to examples and benchmarks
  * Write website, link github artifact
  * Build VM, add to website
+  * Btw, I verified that this docker container works for GHC
+    https://index.docker.io/u/zsol/haskell-platform-2013.2.0.0/
+    But a regular virtualbox VM is probably fine...
+     
 
  * Finish updating CancelT effect sigs
 
