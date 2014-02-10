@@ -42,10 +42,42 @@ phybin_bench:
 
 MERGESORT_BENCH=$(BIN)/run_benchmark_mergesort
 
-mergesort_bench:
+MERGESORT_CMD=$(BIN)/test-mergesort-parST 25 8192 8192 
+HS_MERGESORT_CMD=$(MERGESORT_CMD) VAMSort MPMerge
+C_MERGESORT_CMD=$(MERGESORT_CMD) CSort CMerge
+
+mergesort_setup:
+	mkdir -p mergesort/
 	cabal install LVish_repo/haskell/par-transformers/bench/
-#	cabal install LVish_repo/haskell/par-transformers/bench/mergesort/
-	(cd LVish_repo/haskell/par-transformers/bench/ && $(MERGESORT_BENCH) --server) 
+	cabal install LVish_repo/haskell/par-transformers/bench/mergesort/
+
+mergesort_bench: mergesort_setup
+	$(HS_MERGESORT_CMD) +RTS -N1 > mergesort/hs_mergesort1.txt
+	$(HS_MERGESORT_CMD) +RTS -N2 > mergesort/hs_mergesort2.txt
+	$(HS_MERGESORT_CMD) +RTS -N4 > mergesort/hs_mergesort4.txt
+	$(C_MERGESORT_CMD) +RTS -N1 > mergesort/c_mergesort1.txt
+	$(C_MERGESORT_CMD) +RTS -N2 > mergesort/c_mergesort2.txt
+	$(C_MERGESORT_CMD) +RTS -N4 > mergesort/c_mergesort4.txt
+	cat ./mergesort/hs_mergesort*.txt | grep "SELF" > hs_mergesort_results.txt
+	cat ./mergesort/c_mergesort*.txt | grep "SELF" > c_mergesort_results.txt
+
+mergesort_bench_large: mergesort_setup
+	$(HS_MERGESORT_CMD) +RTS -N1 > mergesort/hs_mergesort1.txt
+	$(HS_MERGESORT_CMD) +RTS -N2 > mergesort/hs_mergesort2.txt
+	$(HS_MERGESORT_CMD) +RTS -N4 > mergesort/hs_mergesort4.txt
+	$(HS_MERGESORT_CMD) +RTS -N6 > mergesort/hs_mergesort6.txt
+	$(HS_MERGESORT_CMD) +RTS -N8 > mergesort/hs_mergesort8.txt
+	$(HS_MERGESORT_CMD) +RTS -N10 > mergesort/hs_mergesort10.txt
+	$(HS_MERGESORT_CMD) +RTS -N12 > mergesort/hs_mergesort12.txt
+	$(C_MERGESORT_CMD) +RTS -N1 > mergesort/c_mergesort1.txt
+	$(C_MERGESORT_CMD) +RTS -N2 > mergesort/c_mergesort2.txt
+	$(C_MERGESORT_CMD) +RTS -N4 > mergesort/c_mergesort4.txt
+	$(C_MERGESORT_CMD) +RTS -N6 > mergesort/c_mergesort6.txt
+	$(C_MERGESORT_CMD) +RTS -N8 > mergesort/c_mergesort8.txt
+	$(C_MERGESORT_CMD) +RTS -N10 > mergesort/c_mergesort10.txt
+	$(C_MERGESORT_CMD) +RTS -N12 > mergesort/c_mergesort12.txt
+	cat ./mergesort/hs_mergesort*.txt | grep "SELF" > hs_mergesort_results.txt
+	cat ./mergesort/c_mergesort*.txt | grep "SELF" > c_mergesort_results.txt
 
 #------------------------------------------------------------
 
