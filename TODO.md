@@ -6,7 +6,8 @@ Critical Path
    conditionals and commit to NEW_GENERIC, refactor to use 'irange'
    function for range construction
    X Currently, make monadpar_bench errors with problems with Range.
- 
+
+ * [RN] get monad-par benchmarks fully running... more bugs to fix
  
  * [LK] finish exposing Counter
  * [RN] switch phybin to new counter 
@@ -33,6 +34,7 @@ Lower priority
 
  * [RN] try phybin with new par-folding for SLMap ... time permitting
 
+ * [RN] Finish updating DeadlockT effect sigs, test it.
 
 
 
