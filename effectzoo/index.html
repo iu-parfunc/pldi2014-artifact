@@ -23,7 +23,35 @@ Effect Zoo"!
 
 <h3>Using <a href="http://www.docker.io/">Docker</a></h3>
 
-<p>...todo...</p>
+<p> Install Docker. If your Docker installation
+  requires <code>root</code>, then prefix the following commands
+  with <code>sudo</code>. </p>
+
+<h4> The simplest way </h4>
+
+<ol>
+  <li> <code>docker build -t pldi2014-artifact github.com/iu-parfunc/pldi2014-artifact</code> </li>
+  <li> <code>docker run -i -t pldi2014-artifact /bin/bash</code></li>
+  <li> Look around at the results as described below</li>
+</ol>
+
+<h4> The pre-built way </h4>
+
+<ol>
+  <li> <code>docker pull samth/pldi2014-artifact</code> </li>
+  <li> <code>docker run -i -t samth/pldi2014-artifact:bench /bin/bash</code></li>
+  <li> Look around at the results as described below</li>
+</ol>
+
+<h4> The run-the-benchmarks-yourself way </h4>
+
+<ol>
+  <li> <code>docker pull samth/pldi2014-artifact</code> </li>
+  <li> <code>docker run -i -t samth/pldi2014-artifact:build /bin/bash</code></li>
+  <li> Inside the docker container, run <code>export USER=pldi</code></li>
+  <li> Then run <code>make everything</code></li>
+  <li> Look around at the results as described below</li>
+</ol>
 
 <h3>Not using Docker</h3>
 
