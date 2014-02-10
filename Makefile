@@ -7,6 +7,10 @@ PHYBIN=PhyBin/
 
 CABAL_ARGS= --disable-documentation --disable-library-profiling --reinstall --force-reinstall -j
 
+SANDBOX=$(shell pwd)/.cabal-sandbox/
+
+BIN=$(SANDBOX)/bin/
+
 build: sandbox submod 
 	cabal install -O2 -j vector vector-algorithms
 	$(MAKE) rebuild
@@ -20,7 +24,7 @@ examples:
 #------------------------------------------------------------
 # Bench 1: Phybin
 
-PHYBIN_CMD=./.cabal-sandbox/bin/phybin-par -n150 --single --rfdist ./hashrf/30.hashrf-6.0.0-dist-seed-option/examples/150-taxa-1000-trees.tre +RTS -K100M -RTS
+PHYBIN_CMD=$(BIN)/phybin-par -n150 --single --rfdist ./hashrf/30.hashrf-6.0.0-dist-seed-option/examples/150-taxa-1000-trees.tre +RTS -K100M -RTS
 
 phybin_bench:
 	$(PHYBIN_CMD) +RTS -N1 > ./PhyBin/phybin_out1.txt
@@ -36,8 +40,12 @@ phybin_bench:
 #------------------------------------------------------------
 # Bench 3: Mergesort
 
+MERGESORT_BENCH=$(BIN)/run_benchmark_mergesort
+
 mergesort_bench:
-	cabal install LVish_repo/haskell/par-transformers/bench/mergesort/
+	cabal install LVish_repo/haskell/par-transformers/bench/
+#	cabal install LVish_repo/haskell/par-transformers/bench/mergesort/
+	(cd LVish_repo/haskell/par-transformers/bench/ && $(MERGESORT_BENCH) --server) 
 
 #------------------------------------------------------------
 
@@ -46,7 +54,9 @@ monadpar_bench: submod
 
 sandbox:
 	cabal sandbox init
-	(cd monad-par/examples && cabal sandbox init --sandbox ../../.cabal-sandbox)
+	(cd monad-par/examples && cabal sandbox init --sandbox $(SANDBOX))
+	(cd LVish_repo/haskell/par-transformers/bench/ && cabal sandbox init --sandbox $(SANDBOX))
+	(cd LVish_repo/haskell/par-transformers/bench/mergesort/ && cabal sandbox init --sandbox $(SANDBOX))
 
 clean: submod clean-sandbox 
 
