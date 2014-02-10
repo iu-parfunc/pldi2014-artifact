@@ -30,11 +30,16 @@ everything: build examples phybin_bench mergesort_bench transformer_bench
 PHYBIN_CMD=$(BIN)/phybin-par -n150 --single --rfdist ./hashrf/30.hashrf-6.0.0-dist-seed-option/examples/150-taxa-1000-trees.tre +RTS -K100M -RTS
 
 phybin_bench:
+#	for ((i=1; i<=4; i++)); do $(PHYBIN_CMD) +RTS -N1 > ./PhyBin/phybin_out1.txt; done
 	$(PHYBIN_CMD) +RTS -N1 > ./PhyBin/phybin_out1.txt
 	$(PHYBIN_CMD) +RTS -N2 > ./PhyBin/phybin_out2.txt
 	$(PHYBIN_CMD) +RTS -N3 > ./PhyBin/phybin_out3.txt
 	$(PHYBIN_CMD) +RTS -N4 > ./PhyBin/phybin_out4.txt
-	cat ./PhyBin/phybin_out?.txt | grep "Time to compute" > phybin_results.txt
+#	cat ./PhyBin/phybin_out?.txt | grep "Time to compute" > phybin_results.txt
+	cat ./PhyBin/phybin_out1.txt | grep "Time to compute" > phybin_results.txt
+	cat ./PhyBin/phybin_out2.txt | grep "Time to compute" > phybin_results.txt
+	cat ./PhyBin/phybin_out3.txt | grep "Time to compute" > phybin_results.txt
+	cat ./PhyBin/phybin_out4.txt | grep "Time to compute" > phybin_results.txt
 
 #------------------------------------------------------------
 # Bench 2: Transformer overheads
