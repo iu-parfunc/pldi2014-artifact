@@ -10,6 +10,9 @@ build: sandbox submod rebuild
 rebuild:
 	cabal install --reinstall --force-reinstall -j -f-fusion -f-hydra ./HSBencher ${LVISH_PKGS} ${MONAD_PAR_PKGS} ${PHYBIN} 
 
+examples:
+	cabal install LVish-examples/2.0
+
 #------------------------------------------------------------
 # Bench 1: Phybin
 
