@@ -5,12 +5,14 @@ LVISH_PKGS=LVish_repo/haskell/par-classes LVish_repo/haskell/lvish LVish_repo/ha
 
 PHYBIN=PhyBin/
 
+CABAL_ARGS= --disable-documentation --disable-library-profiling --reinstall --force-reinstall -j
+
 build: sandbox submod 
-	cabal install -O2 -j vector-algorithms
+	cabal install -O2 -j vector vector-algorithms
 	$(MAKE) rebuild
 
 rebuild:
-	cabal install --reinstall --force-reinstall -j -f-fusion -f-hydra ./HSBencher ${LVISH_PKGS} ${MONAD_PAR_PKGS} ${PHYBIN} 
+	cabal install $(CABAL_ARGS) -f-fusion -f-hydra ./HSBencher ${LVISH_PKGS} ${MONAD_PAR_PKGS} ${PHYBIN} 
 
 examples:
 	cabal install LVish-examples/2.0

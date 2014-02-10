@@ -15,10 +15,14 @@ Critical Path
 
  * Finish updating CancelT effect sigs
 
+ * Make Hashrf run 
+ * Make DPJ mergesort run
+ * Make Cilk mergesort run
+
 Lower priority
 --------------
 
- * Get basic examples with LVish 2.0 
+ X Get basic examples with LVish 2.0 
  * Get examples with transformers 
 
  * try phybin with new par-folding for SLMap ... time permitting
