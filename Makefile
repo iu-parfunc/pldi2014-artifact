@@ -62,6 +62,12 @@ mergesort_bench: mergesort_setup
 	cat ./mergesort/c_mergesort*.txt | grep "SELF" > c_mergesort_results.txt
 
 mergesort_bench_large: mergesort_setup
+	$(MAKE) mergesort_bench_large_hs
+	$(MAKE) mergesort_bench_large_c
+	cat ./mergesort/hs_mergesort*.txt | grep "SELF" > hs_mergesort_results.txt
+	cat ./mergesort/c_mergesort*.txt | grep "SELF" > c_mergesort_results.txt
+
+mergesort_bench_large_hs:
 	$(HS_MERGESORT_CMD) +RTS -N1 > mergesort/hs_mergesort1.txt
 	$(HS_MERGESORT_CMD) +RTS -N2 > mergesort/hs_mergesort2.txt
 	$(HS_MERGESORT_CMD) +RTS -N4 > mergesort/hs_mergesort4.txt
@@ -69,6 +75,7 @@ mergesort_bench_large: mergesort_setup
 	$(HS_MERGESORT_CMD) +RTS -N8 > mergesort/hs_mergesort8.txt
 	$(HS_MERGESORT_CMD) +RTS -N10 > mergesort/hs_mergesort10.txt
 	$(HS_MERGESORT_CMD) +RTS -N12 > mergesort/hs_mergesort12.txt
+mergesort_bench_large_c:
 	$(C_MERGESORT_CMD) +RTS -N1 > mergesort/c_mergesort1.txt
 	$(C_MERGESORT_CMD) +RTS -N2 > mergesort/c_mergesort2.txt
 	$(C_MERGESORT_CMD) +RTS -N4 > mergesort/c_mergesort4.txt
@@ -76,8 +83,6 @@ mergesort_bench_large: mergesort_setup
 	$(C_MERGESORT_CMD) +RTS -N8 > mergesort/c_mergesort8.txt
 	$(C_MERGESORT_CMD) +RTS -N10 > mergesort/c_mergesort10.txt
 	$(C_MERGESORT_CMD) +RTS -N12 > mergesort/c_mergesort12.txt
-	cat ./mergesort/hs_mergesort*.txt | grep "SELF" > hs_mergesort_results.txt
-	cat ./mergesort/c_mergesort*.txt | grep "SELF" > c_mergesort_results.txt
 
 #------------------------------------------------------------
 
