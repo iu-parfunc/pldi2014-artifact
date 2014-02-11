@@ -1,0 +1,5 @@
+FROM iuparfunc/pldi2014-artifact:git
+ENV USER pldi
+RUN git clone https://github.com/iu-parfunc/pldi2014-artifact.git
+WORKDIR pldi2014-artifact
+RUN make submod

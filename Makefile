@@ -125,3 +125,8 @@ really-clean:
 	(cd hashrf && git clean -fxd)
 	(cd dpj_cilk_run && git clean -fxd)
 	git clean -fxd
+
+redo_docker:
+	docker build --no-cache -t iuparfunc/pldi2014-artifact:checkout - < Dockerfile.checkout
+	docker build --no-cache -t iuparfunc/pldi2014-artifact:build - < Dockerfile.build
+	docker build --no-cache -t iuparfunc/pldi2014-artifact:bench - < Dockerfile.bench

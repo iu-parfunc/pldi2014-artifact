@@ -1,0 +1,6 @@
+FROM iuparfunc/pldi2014-artifact:checkout
+ENV USER pldi
+WORKDIR pldi2014-artifact
+RUN make submod
+RUN make sandbox
+RUN make build
