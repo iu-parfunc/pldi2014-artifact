@@ -33,13 +33,19 @@ in section 7.2 of the paper, should appear in
 
 ### Merge sort results
 
-Benchmark results for parallel merge sort, described in section 7.3 of
+Benchmark results for parallel merge sort in LVish, described in section 7.3 of
 the paper, should appear in
 
   * `hs_mergesort_results.txt`
   * `c_mergesort_results.txt`
   
-for the LVish and Cilk versions, respectively.
+Each of those files will contain three numbers, one per line, which
+are running times (in seconds) on 1, 2, and 4 cores, respectively.
+`c_mergesort_results.txt` is the results from the version that bottoms
+out with a library call to a sequential C sort (the version marked as
+"ParST/C" in Figure 5 of the paper); `hs_mergesort_results.txt` is the
+pure Haskell "ParST/HSonly" version in the table in Figure 5 of the
+paper).
 
 ## LVish documentation
 
