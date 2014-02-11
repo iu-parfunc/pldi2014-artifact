@@ -5,8 +5,8 @@ Welcome to the artifact evaluation bundle for "Taming the Parallel
 Effect Zoo".  There are three components to this bundle:
 
   * Benchmark results
-  * LVish code examples
   * LVish documentation
+  * LVish code examples
   
 _LVars_ are monotonically growing, lattice-based data structures for
 deterministic parallel programming. _LVish_ is a Haskell library for
@@ -19,22 +19,27 @@ documentation and examples, and run the benchmarks.
 
 ## Benchmark results 
 
-### PhyBin results
+### PhyBin
 
-Benchmark results for _PhyBin_, the bioinformatics application
+Benchmark results for _PhyBin_, the LVish bioinformatics application
 described in section 7.1 of the paper, should appear in
 `phybin_results.txt`.
 
-### Transformer results
+To build _only_ the PhyBin benchmarks, run `make phybin_bench`.
+
+### Monad transformer overhead
 
 Benchmark results for evaluating monad tranformer overhead, described
 in section 7.2 of the paper, should appear in
 `transformer_results.txt`.
 
-### Merge sort results
+To build _only_ the transformer benchmarks, run `make
+transformer_bench`.
 
-Benchmark results for parallel merge sort in LVish, described in section 7.3 of
-the paper, should appear in
+### Parallel merge sort
+
+Benchmark results for parallel merge sort in LVish, described in
+section 7.3 of the paper, should appear in
 
   * `hs_mergesort_results.txt`
   * `c_mergesort_results.txt`
@@ -46,6 +51,8 @@ library call to a sequential C sort (the version marked as "ParST/C"
 in Figure 5 of the paper); `hs_mergesort_results.txt` is a pure
 Haskell version ("ParST/HSonly" in the table in Figure 5 of the
 paper).
+
+To build _only_ the merge sort benchmarks, run `make mergesort_bench`.
 
 ## LVish documentation
 
