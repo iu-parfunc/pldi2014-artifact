@@ -125,4 +125,3 @@ really-clean:
 	(cd hashrf && git clean -fxd)
 	(cd dpj_cilk_run && git clean -fxd)
 	git clean -fxd
-	$(MAKE) clean-sandbox
