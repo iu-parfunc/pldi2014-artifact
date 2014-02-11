@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -11,14 +12,65 @@
 
 <h1>Taming the Parallel Effect Zoo: Extensible Deterministic Parallelism with LVish</h1>
 
-<ul>
-<li><a href="submitted.pdf">Submitted version of paper</a></li>
-<li>Artifact download link</li>
-</ul>
+<p>Welcome to the artifact evaluation page for "Taming the Parallel
+Effect Zoo"!</p>
 
-<h2>Instructions</h2>
+<p><a href="submitted.pdf">Submitted version of paper</a></p>
 
-<p>...todo...</p>
+<h2>Build instructions</h2>
+
+<h3>Using <a href="http://www.docker.io/">Docker</a></h3>
+
+<p> Install Docker. If your Docker installation
+  requires <code>root</code>, then prefix the following commands
+  with <code>sudo</code>. </p>
+
+<h4> The simplest way </h4>
+
+<ol>
+  <li> <code>docker build -t pldi2014-artifact github.com/iu-parfunc/pldi2014-artifact</code> </li>
+  <li> <code>docker run -i -t pldi2014-artifact /bin/bash</code></li>
+  <li> Look around at the results as described in <a href="https://github.com/iu-parfunc/pldi2014-artifact#pldi2014-artifact">the
+README</a></li>
+</ol>
+
+<h4> The pre-built way </h4>
+
+<p>If you use this approach, note that the benchmark results were
+generated on our machines, not by you!  If you want to do it yourself,
+see the
+<em>run-the-benchmarks-yourself</em> way, described below.</p>
+
+<ol>
+  <li> <code>docker pull iuparfunc/pldi2014-artifact</code> </li>
+  <li> <code>docker run -i -t iuparfunc/pldi2014-artifact:bench /bin/bash</code></li>
+  <li> Look around at the results as described in <a href="https://github.com/iu-parfunc/pldi2014-artifact#pldi2014-artifact">the
+README</a></li>
+</ol>
+
+<h4> The run-the-benchmarks-yourself way </h4>
+
+<ol>
+  <li> <code>docker pull iuparfunc/pldi2014-artifact</code> </li>
+  <li> <code>docker run -e USER=pldi -i -t iuparfunc/pldi2014-artifact:build /bin/bash</code></li>
+  <li> <code>cd pldi2014-artifact</code>
+  <li> Build everything (will take some time): run <code>make everything</code></li>
+  <li> Look around at the results as described in <a href="https://github.com/iu-parfunc/pldi2014-artifact#pldi2014-artifact">the
+README</a></li>
+</ol>
+
+<h3>Not using Docker</h3>
+
+<ol>
+  <li> Install the <a href="http://www.haskell.org/platform/">Haskell Platform</a></li>
+  <li> Install <a href="http://www.haskell.org/cabal/download.html">Cabal 1.18</a> or newer</li>
+  <li> Clone the artifact repo: run <code>git clone
+  https://github.com/iu-parfunc/pldi2014-artifact.git</code></li>
+  <li> <code>cd pldi2014-artifact</code></li>
+  <li> Build everything (will take some time -- allow several hours): run <code>make everything</code></li>
+  <li> Look around at the results as described in <a href="https://github.com/iu-parfunc/pldi2014-artifact#pldi2014-artifact">the
+	  README</a></li>
+</ol>
 
 <h2>AEC conflicts</h2>
 
