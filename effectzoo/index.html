@@ -54,8 +54,7 @@ README</a></li>
 
 <ol>
   <li> <code>docker pull samth/pldi2014-artifact</code> </li>
-  <li> <code>docker run -i -t samth/pldi2014-artifact:build /bin/bash</code></li>
-  <li> Inside the docker container, run <code>export USER=pldi</code></li>
+  <li> <code>docker run -e USER=pldi -i -t samth/pldi2014-artifact:build /bin/bash</code></li>
   <li>Build everything (will take some time): run <code>make everything</code></li>
   <li> Look around at the results as described in <a href="https://github.com/iu-parfunc/pldi2014-artifact#pldi2014-artifact">the
 README</a></li>
