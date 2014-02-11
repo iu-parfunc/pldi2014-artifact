@@ -25,7 +25,9 @@ Benchmark results for _PhyBin_, the LVish bioinformatics application
 described in section 7.1 of the paper, should appear in
 `phybin_results.txt`.
 
-To build _only_ the PhyBin benchmarks, run `make phybin_bench`.
+If you ran `make everything`, `phybin_results.txt` should already
+exist.  Alternatively, to build and run _only_ the PhyBin benchmarks,
+run `make phybin_bench`.
 
 ### Monad transformer overhead
 
@@ -33,8 +35,9 @@ Benchmark results for evaluating monad tranformer overhead, described
 in section 7.2 of the paper, should appear in
 `transformer_results.txt`.
 
-To build _only_ the transformer benchmarks, run `make
-transformer_bench`.
+If you ran `make everything`, `transformer_results.txt` should already
+exist.  Alternatively, to build and run _only_ the transformer
+benchmarks, run `make transformer_bench`.
 
 ### Parallel merge sort
 
@@ -52,7 +55,10 @@ in Figure 5 of the paper); `hs_mergesort_results.txt` is a pure
 Haskell version ("ParST/HSonly" in the table in Figure 5 of the
 paper).
 
-To build _only_ the merge sort benchmarks, run `make mergesort_bench`.
+If you ran `make everything`, `hs_mergesort_results.txt` and
+`c_mergesort_results.txt` should already exist.  Alternatively, to
+build and run _only_ the merge sort benchmarks, run `make
+mergesort_bench`.
 
 ## LVish documentation
 
