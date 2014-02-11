@@ -41,10 +41,10 @@ the paper, should appear in
   
 Each of those files will contain three numbers, one per line, which
 are running times (in seconds) on 1, 2, and 4 cores, respectively.
-`c_mergesort_results.txt` is the results from the version that bottoms
-out with a library call to a sequential C sort (the version marked as
-"ParST/C" in Figure 5 of the paper); `hs_mergesort_results.txt` is the
-pure Haskell "ParST/HSonly" version in the table in Figure 5 of the
+`c_mergesort_results.txt` is the version that bottoms out with a
+library call to a sequential C sort (the version marked as "ParST/C"
+in Figure 5 of the paper); `hs_mergesort_results.txt` is a pure
+Haskell version ("ParST/HSonly" in the table in Figure 5 of the
 paper).
 
 ## LVish documentation
