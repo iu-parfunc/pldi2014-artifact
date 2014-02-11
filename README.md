@@ -19,12 +19,28 @@ documentation and examples, and run the benchmarks.
 
 ## Benchmark results 
 
-Benchmark results for _PhyBin_, the bioinformatics application
-described in section 8 of the paper, should appear in:
+### PhyBin results
 
-  * `phybin_out/`
-  * `phybin_results.txt`
+Benchmark results for _PhyBin_, the bioinformatics application
+described in section 7.1 of the paper, should appear in
+`phybin_results.txt`.
+
+### Transformer results
+
+Benchmark results for evaluating monad tranformer overhead, described
+in section 7.2 of the paper, should appear in
+`transformer_results.txt`.
+
+### Merge sort results
+
+Benchmark results for parallel merge sort, described in section 7.3 of
+the paper, should appear in
+
+  * `hs_mergesort_results.txt`
+  * `c_mergesort_results.txt`
   
+for the LVish and Cilk versions, respectively.
+
 ## LVish documentation
 
 The Haddock-generated HTML documentation will appear in
