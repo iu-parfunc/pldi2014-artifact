@@ -62,9 +62,11 @@ mergesort_bench`.
 
 ## LVish documentation
 
-The Haddock-generated HTML documentation will appear in
+The Haddock-generated HTML documentation will appear inside the
+ `.cabal-sandbox/share/doc/` directory.
+ 
+The main entrypoint module to look at is [Control.LVish](apidocs/lvish-2.0/html/index.html).
 
-  * `.cabal-sandbox/doc/html/Control-LVish.html`
   
 ## LVish code examples
 
