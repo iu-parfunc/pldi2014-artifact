@@ -61,8 +61,11 @@ README</a></li>
 
 <h3>Not using Docker</h3>
 
+<p>Note that GHC 7.6.3 and Cabal 1.18 are <em>required</em>.</p>
+
 <ol>
-  <li> Install the <a href="http://www.haskell.org/platform/">Haskell Platform</a></li>
+  <li> Install the <a href="http://www.haskell.org/platform/">Haskell
+  Platform</a>, version 2013.2.0.0, including GHC 7.6.3</li>
   <li> Install <a href="http://www.haskell.org/cabal/download.html">Cabal 1.18</a> or newer</li>
   <li> Clone the artifact repo: run <code>git clone
   https://github.com/iu-parfunc/pldi2014-artifact.git</code></li>
@@ -71,6 +74,20 @@ README</a></li>
   <li> Look around at the results as described in <a href="https://github.com/iu-parfunc/pldi2014-artifact#pldi2014-artifact">the
 	  README</a></li>
 </ol>
+
+<h4>Troubleshooting</h4>
+
+<dl>
+<dt>I got a <code>cabal: unrecognised command: sandbox</code>
+error!</dt>
+<dd>What does <code>cabal --version</code> say?  If you have a version
+older than 1.18, you'll need to upgrade to 1.18 or newer to support
+the <code>sandbox</code> feature.</dd>
+<dt>I got a <code>cabal: Could not resolve dependencies</code>
+error!</dt>
+<dd>What does <code>ghc --version</code> say?  Make sure to use GHC
+7.6.3.</dd>
+</dl>
 
 <h2>AEC conflicts</h2>
 
