@@ -16,7 +16,7 @@ prefix the following commands with `sudo`.
 
   1. `docker build -t pldi2014-artifact github.com/iu-parfunc/pldi2014-artifact`
   2. `docker run -i -t pldi2014-artifact /bin/bash`
-  3. Look around at the results as described below in "Artifact Description"
+  3. Look around at the results as described [below](#artifact-description)
 
 #### The pre-built way
 
@@ -26,7 +26,7 @@ see the _run-the-benchmarks-yourself_ way, described below.
 
   1. `docker pull iuparfunc/pldi2014-artifact`
   2. `docker run -i -t iuparfunc/pldi2014-artifact:bench /bin/bash`
-  3. Look around at the results as described below in "Artifact Description"
+  3. Look around at the results as described [below](#artifact-description)
 
 #### The run-the-benchmarks-yourself way
 
@@ -34,7 +34,7 @@ see the _run-the-benchmarks-yourself_ way, described below.
   2. `docker run -e USER=pldi -i -t iuparfunc/pldi2014-artifact:build /bin/bash`
   3. `cd pldi2014-artifact`
   4. Build everything (will take some time): run `make everything`
-  5. Look around at the results as described below in "Artifact Description"
+  5. Look around at the results as described [below](#artifact-description)
 
 ### Not using Docker
 
@@ -46,7 +46,7 @@ Note that GHC 7.6.3 and Cabal 1.18 are _required_.
   https://github.com/iu-parfunc/pldi2014-artifact.git`
   4. `cd pldi2014-artifact`
   5. Build everything (will take some time -- allow several hours): run `make everything`
-  6. Look around at the results as described below in "Artifact Description"
+  6. Look around at the results as described [below](#artifact-description)
 
 #### Troubleshooting
 
@@ -75,7 +75,7 @@ deterministic parallel programming. _LVish_ is a Haskell library for
 programming with LVars.
   
 First, follow the
-[instructions for downloading and building the artifact bundle](http://www.cs.indiana.edu/~lkuper/effectzoo/).
+[instructions for downloading and building the artifact bundle](#build-instructions).
 Doing so will install LVish and its dependencies, build the LVish
 documentation and examples, and run the benchmarks.
 
