@@ -1,0 +1,5 @@
+FROM zsol/haskell-platform-2013.2.0.0
+ENV USER pldi
+RUN cabal update
+RUN apt-get update
+RUN apt-get install -y git graphviz

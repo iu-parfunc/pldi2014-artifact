@@ -1,0 +1,6 @@
+FROM iuparfunc/pldi2014-artifact:build
+ENV USER pldi
+WORKDIR pldi2014-artifact
+RUN make phybin_bench
+RUN make mergesort_bench
+RUN make transformer_bench

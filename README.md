@@ -127,7 +127,9 @@ mergesort_bench`.
 The Haddock-generated HTML documentation will appear inside the
  `.cabal-sandbox/share/doc/` directory.
  
-The main entrypoint module to look at is [Control.LVish](apidocs/lvish-2.0/html/index.html).
+The main package provides the entrypoint [Control.LVish](http://htmlpreview.github.io/?https://github.com/iu-parfunc/pldi2014-artifact/blob/master/apidocs/lvish-2.0/html/index.html), as well as various LVar datatypes.
+
+[Par-transformers](http://htmlpreview.github.io/?https://github.com/iu-parfunc/pldi2014-artifact/blob/master/apidocs/par-transformers-1.1/html/index.html) layers on additonal effects not found in the main module.
 
 ## LVish code examples
 
