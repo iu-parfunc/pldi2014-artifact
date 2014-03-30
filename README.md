@@ -1,8 +1,70 @@
-pldi2014-artifact
-=================
+# Artifact for "Taming the Parallel Effect Zoo: Extensible Deterministic Parallelism with LVish"
 
 Welcome to the artifact evaluation bundle for "Taming the Parallel
-Effect Zoo".  There are three components to this bundle:
+Effect Zoo!"
+
+[Submitted version of paper](submitted.pdf) (superseded by camera-ready version)
+
+## Build instructions
+
+### Using [Docker](http://www.docker.io/)
+
+Install Docker. If your Docker installation requires `root`, then
+prefix the following commands with `sudo`.
+
+#### The simplest way
+
+  1. `docker build -t pldi2014-artifact github.com/iu-parfunc/pldi2014-artifact`
+  2. `docker run -i -t pldi2014-artifact /bin/bash`
+  3. Look around at the results as described below in "Artifact Description"
+
+#### The pre-built way
+
+If you use this approach, note that the benchmark results were
+generated on our machines, not by you!  If you want to do it yourself,
+see the _run-the-benchmarks-yourself_ way, described below.
+
+  1. `docker pull iuparfunc/pldi2014-artifact`
+  2. `docker run -i -t iuparfunc/pldi2014-artifact:bench /bin/bash`
+  3. Look around at the results as described below in "Artifact Description"
+
+#### The run-the-benchmarks-yourself way
+
+  1. `docker pull iuparfunc/pldi2014-artifact`
+  2. `docker run -e USER=pldi -i -t iuparfunc/pldi2014-artifact:build /bin/bash`
+  3. `cd pldi2014-artifact`
+  4. Build everything (will take some time): run `make everything`
+  5. Look around at the results as described below in "Artifact Description"
+
+### Not using Docker
+
+Note that GHC 7.6.3 and Cabal 1.18 are _required_.
+
+  1. Install the [Haskell Platform](http://www.haskell.org/platform/), version 2013.2.0.0, including GHC 7.6.3
+  2. Install [Cabal 1.18](http://www.haskell.org/cabal/download.html) or newer
+  3. Clone the artifact repo: run `git clone
+  https://github.com/iu-parfunc/pldi2014-artifact.git`
+  4. `cd pldi2014-artifact`
+  5. Build everything (will take some time -- allow several hours): run `make everything`
+  6. Look around at the results as described below in "Artifact Description"
+
+#### Troubleshooting
+
+**I got a `cabal: unrecognised command: sandbox` error!**
+
+What does `cabal --version` say?  If you have a version older than 1.18, you'll need to upgrade to 1.18 or newer to support the `sandbox` feature.
+
+**I got a `cabal: Could not resolve dependencies` error!**
+
+What does `ghc --version` say?  Make sure to use GHC 7.6.3.
+
+## AEC conflicts
+
+Eric Holk, Vincent St-Amour
+
+## Artifact description
+
+There are three components to this bundle:
 
   * Benchmark results
   * LVish documentation
@@ -67,7 +129,6 @@ The Haddock-generated HTML documentation will appear inside the
  
 The main entrypoint module to look at is [Control.LVish](apidocs/lvish-2.0/html/index.html).
 
-  
 ## LVish code examples
 
 The directory `LVish-examples/2.0/` contains a variety of toy examples
