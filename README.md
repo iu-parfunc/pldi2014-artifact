@@ -30,7 +30,7 @@ see the _run-the-benchmarks-yourself_ way, described below.
 
 #### The run-the-benchmarks-yourself way
 
-  1. `docker pull iuparfunc/pldi2014-artifact`
+  1. `docker pull iuparfunc/pldi2014-artifact:build`
   2. `docker run -e USER=pldi -i -t iuparfunc/pldi2014-artifact:build /bin/bash`
   3. `cd pldi2014-artifact`
   4. Build everything (will take some time): run `make everything`
