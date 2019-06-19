@@ -24,7 +24,7 @@ If you use this approach, note that the benchmark results were
 generated on our machines, not by you!  If you want to do it yourself,
 see the _run-the-benchmarks-yourself_ way, described below.
 
-  1. `docker pull iuparfunc/pldi2014-artifact`
+  1. `docker pull iuparfunc/pldi2014-artifact:bench`
   2. `docker run -i -t iuparfunc/pldi2014-artifact:bench /bin/bash`
   3. Look around at the results as described [below](#artifact-description)
 
